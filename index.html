@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neşet Özkan Tan — Curriculum Vitae</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0f1923;--ink2:#3a4a5a;--ink3:#6b7c8d;
+  --cream:#faf8f4;--cream2:#f2ede4;--cream3:#e8e0d0;
+  --gold:#b8923a;--gold2:#d4a843;
+  --teal:#1a5f6e;--teal2:#2a7d8f;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+}
+html{background:#ddd6c8;min-height:100%}
+body{font-family:var(--sans);color:var(--ink);line-height:1.6;padding:32px 16px;background:transparent}
+
+.booklet{max-width:860px;margin:0 auto;background:white;box-shadow:0 12px 80px rgba(0,0,0,0.22)}
+
+/* ── COVER ── */
+.cover{background:var(--ink);color:white;padding:68px 64px 56px;position:relative;overflow:hidden}
+.cover-circle1{position:absolute;top:-90px;right:-90px;width:340px;height:340px;border:1.5px solid rgba(184,146,58,0.25);border-radius:50%;pointer-events:none}
+.cover-circle2{position:absolute;top:-45px;right:-45px;width:210px;height:210px;border:1.5px solid rgba(184,146,58,0.15);border-radius:50%;pointer-events:none}
+.cover-circle3{position:absolute;bottom:-60px;left:-60px;width:200px;height:200px;border:1px solid rgba(255,255,255,0.05);border-radius:50%;pointer-events:none}
+.cover-eyebrow{font-family:var(--sans);font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold2);margin-bottom:20px;font-weight:500}
+.cover-name{font-family:var(--serif);font-size:56px;line-height:1.1;color:white;margin-bottom:6px}
+.cover-name em{color:var(--gold2);font-style:italic}
+.cover-subtitle{font-family:var(--serif);font-size:18px;font-weight:400;color:rgba(255,255,255,0.55);margin-bottom:38px;font-style:italic}
+.cover-degrees{display:flex;gap:12px;margin-bottom:44px;flex-wrap:wrap}
+.degree-pill{background:rgba(184,146,58,0.14);border:1px solid rgba(184,146,58,0.4);border-radius:3px;padding:7px 16px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold2);font-weight:500}
+.cover-rule{height:1px;background:rgba(255,255,255,0.1);margin-bottom:32px}
+.cover-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.meta-item label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.35);display:block;margin-bottom:5px;font-weight:500}
+.meta-item span{font-size:13px;color:rgba(255,255,255,0.8)}
+
+/* ── NAV TABS ── */
+.tabs{display:flex;gap:2px;background:var(--cream2);padding:10px 10px 0;border-bottom:1px solid var(--cream3)}
+.tab{font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:10px 20px;cursor:pointer;color:var(--ink3);border-radius:4px 4px 0 0;transition:all .18s;background:transparent;border:none;font-family:var(--sans);font-weight:500}
+.tab.active{background:white;color:var(--teal)}
+.tab:hover:not(.active){background:rgba(255,255,255,0.5);color:var(--ink2)}
+.page{display:none}.page.active{display:block}
+
+/* ── BODY GRID ── */
+.body{display:grid;grid-template-columns:268px 1fr}
+
+/* ── SIDEBAR BASE ── */
+.sidebar{padding:40px 28px;border-right:1px solid var(--cream3)}
+.sidebar-section{margin-bottom:32px}
+.sidebar-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--cream3)}
+.sidebar-text{font-size:12.5px;color:var(--ink2);line-height:1.65}
+
+/* Sidebar light (cream) */
+.sidebar-cream{background:var(--cream)}
+/* Sidebar teal */
+.sidebar-teal{background:var(--teal)}
+.sidebar-teal .stat-num{font-family:var(--serif);font-size:44px;color:var(--gold2);line-height:1}
+.sidebar-teal .stat-label{font-size:11px;color:rgba(255,255,255,0.65);margin-top:3px}
+.sidebar-teal .stat-block{margin-bottom:28px}
+.sidebar-teal .spec-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:10px;padding-bottom:8px;border-top:1px solid rgba(255,255,255,0.12);padding-top:20px;font-weight:500}
+.sidebar-teal .spec-item{font-size:12px;color:rgba(255,255,255,0.75);line-height:2.1}
+/* Sidebar dark */
+.sidebar-dark{background:var(--ink)}
+.sidebar-dark .big-num{font-family:var(--serif);font-size:56px;color:var(--gold2);line-height:1;margin-bottom:4px}
+.sidebar-dark .big-label{font-size:11px;color:rgba(255,255,255,0.45);margin-bottom:24px}
+.sidebar-dark .sub-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+.sidebar-dark .sub-num{font-family:var(--serif);font-size:30px;color:var(--gold2)}
+.sidebar-dark .sub-label{font-size:11px;color:rgba(255,255,255,0.45);margin-top:2px}
+.sidebar-dark .venue-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:10px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.1);font-weight:500}
+.sidebar-dark .venue-item{font-size:12px;color:rgba(255,255,255,0.65);line-height:2.1}
+.sidebar-dark .legend-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:10px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.1);font-weight:500}
+.legend-row{display:flex;align-items:center;gap:8px;font-size:11px;color:rgba(255,255,255,0.6);margin-bottom:6px}
+.dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.dot-gold{background:var(--gold2)}
+.dot-teal{background:#2a7d8f}
+
+/* Skill bars */
+.skill-row{display:flex;align-items:center;gap:8px;margin-bottom:9px}
+.skill-name{font-size:12px;color:var(--ink2);flex:1}
+.skill-bar{flex:2;height:2px;background:var(--cream3);border-radius:2px;overflow:hidden}
+.skill-fill{height:100%;background:var(--gold);border-radius:2px}
+
+/* Award / contact items */
+.award-item{margin-bottom:12px}
+.award-title{font-size:12.5px;color:var(--ink);font-weight:500;line-height:1.4}
+.award-sub{font-size:11px;color:var(--ink3);margin-top:2px}
+.contact-row{display:flex;align-items:flex-start;gap:8px;margin-bottom:9px;font-size:12.5px;color:var(--ink2)}
+.contact-row svg{width:14px;height:14px;flex-shrink:0;margin-top:2px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ── MAIN CONTENT ── */
+.main{padding:42px 46px}
+.section{margin-bottom:40px}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.section-num{font-family:var(--serif);font-size:34px;color:var(--cream2);line-height:1;font-weight:600}
+.section-title{font-family:var(--serif);font-size:14px;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal);white-space:nowrap}
+.section-rule{flex:1;height:1px;background:var(--cream3)}
+
+/* Profile */
+.profile-text{font-size:13.5px;color:var(--ink2);line-height:1.78;font-style:italic;border-left:3px solid var(--gold);padding-left:18px}
+
+/* Positions */
+.position{margin-bottom:22px;padding-bottom:22px;border-bottom:1px solid var(--cream2)}
+.position:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.pos-header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:3px}
+.pos-title{font-family:var(--serif);font-size:14.5px;color:var(--ink);font-weight:600;line-height:1.3}
+.pos-date{font-size:11px;color:var(--gold);white-space:nowrap;margin-top:2px;font-weight:500;letter-spacing:.5px}
+.pos-org{font-size:12px;color:var(--teal2);margin-bottom:8px;font-style:italic}
+.pos-bullets{list-style:none;padding:0}
+.pos-bullets li{font-size:12.5px;color:var(--ink2);padding-left:16px;position:relative;margin-bottom:4px;line-height:1.55}
+.pos-bullets li::before{content:'—';position:absolute;left:0;color:var(--gold);font-size:10px;top:3px}
+
+/* Research */
+.research-row{margin-bottom:12px}
+.research-label{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:3px}
+.research-val{font-size:12.5px;color:var(--ink2);line-height:1.6}
+.collab-logos{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.collab-tag{font-size:11px;color:var(--teal);background:rgba(26,95,110,0.07);padding:4px 10px;border-radius:2px;font-weight:500}
+
+/* Service */
+.service-item{font-size:12.5px;color:var(--ink2);padding-left:16px;position:relative;margin-bottom:8px;line-height:1.5}
+.service-item::before{content:'·';position:absolute;left:3px;color:var(--gold);font-size:18px;top:-3px}
+
+/* Teaching */
+.teach-block{margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--cream2)}
+.teach-block:last-child{border-bottom:none}
+.teach-inst{font-family:var(--serif);font-size:14px;color:var(--ink);font-weight:600;margin-bottom:10px}
+.teach-inst span{font-family:var(--sans);font-size:11px;font-weight:400;color:var(--ink3);margin-left:8px}
+.teach-course{display:flex;gap:8px;margin-bottom:6px;align-items:baseline}
+.course-code{font-size:11px;font-weight:500;color:var(--teal);min-width:88px;letter-spacing:.5px}
+.course-name{font-size:12.5px;color:var(--ink2);flex:1}
+.course-role{font-size:11px;color:var(--ink3);white-space:nowrap;font-style:italic}
+.teach-note{margin-top:10px;padding:10px 16px;background:var(--cream);border-left:3px solid var(--gold);font-size:12px;color:var(--ink2);border-radius:0 3px 3px 0}
+
+/* Publications */
+.year-tag{font-family:var(--serif);font-size:12px;color:var(--ink3);font-style:italic;margin:16px 0 8px;padding-bottom:5px;border-bottom:1px solid var(--cream2)}
+.pub{display:flex;gap:12px;margin-bottom:12px;align-items:flex-start}
+.pub-num{font-family:var(--serif);font-size:11px;color:var(--ink3);min-width:22px;text-align:right;margin-top:3px;font-style:italic}
+.pub-body{font-size:12.5px;color:var(--ink2);line-height:1.58}
+.pub-body strong{color:var(--ink);font-weight:500}
+.pub-venue{font-size:11.5px;color:var(--teal);font-weight:500;letter-spacing:.2px}
+.pub-badge{display:inline-block;background:#fef3e2;color:#8a5f00;font-size:10px;padding:2px 7px;border-radius:2px;margin-left:5px;font-weight:500;vertical-align:middle}
+
+/* Footer */
+.footer{background:var(--ink);color:rgba(255,255,255,0.35);text-align:center;padding:18px;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-family:var(--sans)}
+
+@media(max-width:700px){
+  .body{grid-template-columns:1fr}
+  .sidebar{border-right:none;border-bottom:1px solid var(--cream3)}
+  .cover{padding:40px 28px 36px}
+  .cover-name{font-size:36px}
+  .cover-meta{grid-template-columns:1fr 1fr}
+  .main{padding:28px 24px}
+  .tabs .tab{padding:8px 12px;font-size:10px}
+}
+
+/* Print */
+@media print{
+  html{background:white}
+  body{padding:0}
+  .booklet{box-shadow:none;max-width:none}
+  .tabs{display:none}
+  .page{display:block!important}
+  .section{page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<div class="booklet">
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-circle1"></div>
+    <div class="cover-circle2"></div>
+    <div class="cover-circle3"></div>
+    <div class="cover-eyebrow">Curriculum Vitae</div>
+    <div class="cover-name">Neşet Özkan <em>Tan</em></div>
+    <div class="cover-subtitle">Mathematician and  Computer Scientist</div>
+    <div class="cover-degrees">
+      <div class="degree-pill">Ph.D. Mathematics</div>
+      <div class="degree-pill">Ph.D. Computer Science</div>
+    </div>
+    <div class="cover-rule"></div>
+    <div class="cover-meta">
+      <div class="meta-item"><label>Location</label><span>Auckland, New Zealand</span></div>
+      <div class="meta-item"><label>Affiliation</label><span>University of Auckland</span></div>
+      
+    </div>
+  </div>
+
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab active" onclick="showPage('overview',this)">Overview</button>
+    <button class="tab" onclick="showPage('teaching',this)">Teaching</button>
+    <button class="tab" onclick="showPage('publications',this)">Publications</button>
+  </div>
+
+  <!-- PAGE 1: OVERVIEW -->
+  <div class="page active" id="page-overview">
+    <div class="body">
+      <div class="sidebar sidebar-cream">
+
+        <div class="sidebar-section">
+          <div class="sidebar-label">Contact</div>
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 1 8 8c0 5-8 13-8 13S4 15 4 10a8 8 0 0 1 8-8z"/></svg>
+            <span>Auckland, New Zealand</span>
+          </div>
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73L12 2 4 6.27A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73L12 22l8-4.27A2 2 0 0 0 21 16z"/></svg>
+            <span>www.scitrue.org</span>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-label">Education</div>
+          <div class="award-item">
+            <div class="award-title">Ph.D. Mathematics</div>
+            <div class="award-sub">Ege University · 2010–2013</div>
+            <div class="award-sub" style="font-style:italic;margin-top:2px">Functional Analysis </div>
+          </div>
+          <div class="award-item">
+            <div class="award-title">Ph.D. Computer Science</div>
+            <div class="award-sub">University of Auckland · 2020–2025</div>
+            <div class="award-sub" style="font-style:italic;margin-top:2px">Neural Networks · Dean's List</div>
+          </div>
+        </div>
+
+        
+
+        <div class="sidebar-section">
+          <div class="sidebar-label">Awards &amp Grants</div>
+          <div class="award-item">
+            <div class="award-title">Best Paper Award</div>
+            <div class="award-sub">EACL 2026 · ACL</div>
+          </div>
+          <div class="award-item">
+            <div class="award-title">Dean's List · PhD Thesis</div>
+            <div class="award-sub">University of Auckland</div>
+          </div>
+          <div class="award-item">
+            <div class="award-title">TUBITAK Research Grant</div>
+            <div class="award-sub">USD 25,000 · PI · 2017–18</div>
+          </div>
+          <div class="award-item">
+            <div class="award-title">Doctoral Scholarship</div>
+            <div class="award-sub">University of Auckland</div>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-label">Memberships</div>
+          <div class="sidebar-text">Association for Computational Linguistics (ACL)<br><br>AI Researchers Association Aotearoa NZ</div>
+        </div>
+
+      </div><!-- /sidebar -->
+
+      <div class="main">
+        <div class="section">
+          <div class="section-head"><div class="section-num">01</div><div class="section-title">Profile</div><div class="section-rule"></div></div>
+          <div class="profile-text">Academic with two doctoral degrees — in Mathematics (Functional Analysis, Banach Lattices, Convex Analysis) and Computer Science (Neural Networks, NLP, foundation models) — and over a decade of university teaching experience spanning pure mathematics, applied mathematics, and numerical computation. With a strong publication record in top venues, active postdoctoral experience at the University of Auckland, and demonstrated capacity to attract research funding, well-positioned to contribute to advanced Applied Mathematics teaching and research.</div>
+        </div>
+
+        <div class="section">
+          <div class="section-head"><div class="section-num">02</div><div class="section-title">Academic &amp; Professional Positions</div><div class="section-rule"></div></div>
+
+          <div class="position">
+            <div class="pos-header"><div class="pos-title">Research Fellow</div><div class="pos-date">2022 – Present</div></div>
+            <div class="pos-org">University of Auckland — School of Computer Science · Auckland, NZ</div>
+            <ul class="pos-bullets">
+              <li>Led projects in generative AI, foundation models, computational biology, model optimisation, and reinforcement learning.</li>
+              <li>Developed grant proposals for MBIE, Ministry of Education, Royal Society, and Samsung.</li>
+              <li>Supervised Honours, Masters, and PhD students.</li>
+              <li>Delivered research talks at international seminars and conferences.</li>
+              <li>Supervised 1 Master and 1 PhD student.</li>
+
+            </ul>
+          </div>
+
+          <div class="position">
+            <div class="pos-header"><div class="pos-title">Founder &amp; Lead Developer — SciTrue</div><div class="pos-date">2023 – Present</div></div>
+            <div class="pos-org">SciTrue · www.scitrue.org · Auckland, NZ</div>
+            <ul class="pos-bullets">
+              <li>Designed and developed an end-to-end agentic AI application for scientific claim attribution and validation.</li>
+              <li>Developed a unified misinformation detection and verification system used in cross-disciplinary research.</li>
+              <li>Led early-stage investment discussions and go-to-market strategy for AI-driven scientific verification.</li>
+            </ul>
+          </div>
+
+          <div class="position">
+            <div class="pos-header"><div class="pos-title">Lecturer — Numerical Computation</div><div class="pos-date">2020 – 2020</div></div>
+            <div class="pos-org">University of Auckland — Department of Mathematics · Auckland, NZ</div>
+            <ul class="pos-bullets">
+              <li>Lecturer for MATHS 270 to ~100 Level 7 students.</li>
+              <li>Taught course content with applications in MATLAB and Python.</li>
+            </ul>
+          </div>
+
+          <div class="position">
+            <div class="pos-header"><div class="pos-title">Director</div><div class="pos-date">2020 – 2022</div></div>
+            <div class="pos-org">Botan Ltd · Auckland, NZ</div>
+            <ul class="pos-bullets">
+              <li>Engineering consultancy; managed subcontracting projects including Commercial Bay and Schindler Lift optimisation.</li>
+            </ul>
+          </div>
+
+          <div class="position">
+            <div class="pos-header"><div class="pos-title">Visiting Post-Doctoral Fellow</div><div class="pos-date">2017 – 2019</div></div>
+            <div class="pos-org">University of Auckland — Department of Mathematics · Auckland, NZ</div>
+            <ul class="pos-bullets">
+              <li>Research in convex analysis and optimisation; published in international mathematics journals.</li>
+              <li>Presented at seminars and conferences.</li>
+            </ul>
+          </div>
+
+          <div class="position">
+            <div class="pos-header"><div class="pos-title">Lecturer — Mathematics &amp; Statistics</div><div class="pos-date">2014 – 2017</div></div>
+            <div class="pos-org">Uşak University · Uşak, Turkey</div>
+            <ul class="pos-bullets">
+              <li>Taught Linear Algebra, Real Analysis, Differential Equations, Topological Spaces, Statistics to large undergraduate cohorts.</li>
+              <li>Supervised 2 Masters, 1 PhD student, and 10+ Honours theses. Bologna Coordinator.</li>
+            </ul>
+          </div>
+
+          <div class="position">
+            <div class="pos-header"><div class="pos-title">Visiting Researcher — Banach Lattices</div><div class="pos-date">2013 – 2014</div></div>
+            <div class="pos-org">Delft University of Technology · Delft, Netherlands</div>
+            <ul class="pos-bullets">
+              <li>Research in Banach Lattices and Riesz spaces.</li>
+              <li> Co-organised Positivity VII (Leiden, 2013).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-head"><div class="section-num">03</div><div class="section-title">Research Profile</div><div class="section-rule"></div></div>
+          <div class="research-row">
+            <div class="research-label">Mathematics</div>
+            <div class="research-val">Functional analysis, Banach lattices, convex analysis, variational methods, numerical methods, applied mathematics.</div>
+          </div>
+          <div class="research-row">
+            <div class="research-label">Interdisciplinary AI / Mathematics</div>
+            <div class="research-val">Foundation models, scientific verification, computational biology (genomics), optimisation for ML, reinforcement learning.</div>
+          </div>
+          <div class="research-row">
+            <div class="research-label">Funding</div>
+            <div class="research-val"> Key Researcher-MBIE Data Science Platform: Beyond Prediction (2023–2026)</div>
+              <div class="research-val"> Key Researcher-Aotearoa Agentic AI Platform ($70M, 7 years, Phase 1 successful). </div>
+              <div class="research-val"> PI on TUBITAK grant (USD 25,000, 2017–2018).</div>
+            
+          </div>
+          
+          <div class="research-row">
+            <div class="research-label">Industrial Collaborations</div>
+            <div class="collab-logos">
+              <div class="collab-tag">Microsoft AI</div>
+              <div class="collab-tag">Google DeepMind</div>
+              <div class="collab-tag">Allen Institute for AI</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-head"><div class="section-num">04</div><div class="section-title">Service &amp; Talks</div><div class="section-rule"></div></div>
+          <div class="service-item">Area Chair and Reviewer — ACL and AAAI (2020–2026)</div>
+          <div class="service-item">Bologna Coordinator &amp; Degree Committee Member, Mathematics, Uşak University (2014–2017)</div>
+          <div class="service-item">Local Organiser — Positivity VII International Conference, Leiden University, June 2013</div>
+          <div class="service-item">Coordinator — Mathematics Documentary Project (Chaos), MFO Oberwolfach, March 2016</div>
+          <div class="service-item">Mentor, Mathematics Association, Uşak University (2014–2017)</div>
+          <div class="service-item">"Data has Shape and Shape has Meaning" — ML Group Seminar, University of Auckland, 2021</div>
+          <div class="service-item">"An Abstract Variational Theorem" — Mathematics Seminar, University of Auckland, 2018</div>
+          <div class="service-item">"Kakutani-Krein and Maeda-Ogasawara Spaces" — Mathematical Colloquium, TU Delft, 2013</div>
+          <div class="service-item">Workshop — 49th Nederlands Mathematics Congress, Radboud University, 2013</div>
+          <div class="service-item">"Riesz Space Valued Measures and Integral" — Young Mathematicians Workshop, İzmir, 2015</div>
+        </div>
+      </div><!-- /main -->
+    </div>
+  </div><!-- /page-overview -->
+
+  <!-- PAGE 2: TEACHING -->
+  <div class="page" id="page-teaching">
+    <div class="body">
+      <div class="sidebar sidebar-teal" style="padding:40px 28px">
+        <div class="stat-block"><div class="stat-num">10+</div><div class="stat-label">years university teaching</div></div>
+        <div class="stat-block"><div class="stat-num">18+</div><div class="stat-label">distinct courses taught</div></div>
+        <div class="stat-block"><div class="stat-num">4</div><div class="stat-label">countries &amp; institutions</div></div>
+        <div class="stat-block"><div class="stat-num">15+</div><div class="stat-label">postgraduate students supervised</div></div>
+        <div>
+          <div class="spec-label">Specialities</div>
+          <div class="spec-item">Real Analysis</div>
+          <div class="spec-item">Numerical Computation</div>
+          <div class="spec-item">Topological Spaces</div>
+          <div class="spec-item">Linear Algebra</div>
+          <div class="spec-item">Differential Equations</div>
+          <div class="spec-item">Statistics</div>
+          <div class="spec-item">Functional Calculus</div>
+          <div class="spec-item">Riesz Spaces / Cone &amp; Duality</div>
+        </div>
+      </div>
+
+      <div class="main">
+        <div class="section">
+          <div class="section-head"><div class="section-num">05</div><div class="section-title">Teaching Experience</div><div class="section-rule"></div></div>
+
+          <div class="teach-block">
+            <div class="teach-inst">University of Auckland <span>2018 – Present</span></div>
+            <div class="teach-course"><span class="course-code">MATHS 270</span><span class="course-name">Numerical Computation</span><span class="course-role">Lecturer · Tutor · Marker</span></div>
+            <div class="teach-course"><span class="course-code">MATHS 253</span><span class="course-name">Algebra and Calculus</span><span class="course-role">Tutor · Marker</span></div>
+            <div class="teach-course"><span class="course-code">MATHS 254</span><span class="course-name">Fundamental Concepts of Mathematics</span><span class="course-role">Exam Marker</span></div>
+            <div class="teach-course"><span class="course-code">MATHS 190</span><span class="course-name">Great Ideas Shaping Our World</span><span class="course-role">Tutor · Marker</span></div>
+            <div class="teach-course"><span class="course-code">MATHS 108</span><span class="course-name">General Mathematics</span><span class="course-role">Tutor · Marker</span></div>
+            <div class="teach-course"><span class="course-code">COMPSCI 120</span><span class="course-name">Mathematics for Computer Science</span><span class="course-role">Tutor · Marker</span></div>
+            <div class="teach-note">Postgraduate Supervision: 1 Masters student (graduated 2026) · 1 PhD student (passed provisional year)</div>
+          </div>
+
+          <div class="teach-block">
+            <div class="teach-inst">Uşak University, Turkey <span>2014 – 2017</span></div>
+            <div class="teach-course"><span class="course-code" style="min-width:130px">Linear Algebra</span><span class="course-name">×2 · ~150 students each</span></div>
+            <div class="teach-course"><span class="course-code" style="min-width:130px">Calculus (Eng.)</span><span class="course-name">×2 · ~250 students each</span></div>
+            <div class="teach-course"><span class="course-code" style="min-width:130px">Statistics</span><span class="course-name">~200 students</span></div>
+            <div class="teach-course"><span class="course-code" style="min-width:130px">Diff. Equations</span><span class="course-name">~120 students</span></div>
+            <div class="teach-course"><span class="course-code" style="min-width:130px">Topological Spaces</span><span class="course-name">×3 · ~150 students each</span></div>
+            <div class="teach-course"><span class="course-code" style="min-width:130px">Real Analysis</span><span class="course-name">×3 · ~70 students each</span></div>
+            <div class="teach-note">Supervised 2 Masters students · 1 PhD student · 10+ Honours theses</div>
+          </div>
+
+          <div class="teach-block">
+            <div class="teach-inst">Leiden University, Netherlands <span>2014</span></div>
+            <div class="teach-course"><span class="course-code" style="min-width:200px">Resolvent of Positive Operators &amp; Functional Calculus</span><span class="course-name">~25 postgraduate students</span></div>
+          </div>
+
+          <div class="teach-block">
+            <div class="teach-inst">Nesin Mathematics Village, Turkey <span>2015</span></div>
+            <div class="teach-course"><span class="course-code" style="min-width:200px">Cone and Duality</span><span class="course-name">International Summer Camp · ~40 students</span></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div><!-- /page-teaching -->
+
+  
+<!-- ══════════ PAGE 3 — PUBLICATIONS ══════════ -->
+<div class="page-break"></div>
+
+<div class="body">
+  <div class="sidebar sidebar-dark" style="padding:28px 22px">
+    <div class="big-num">33</div>
+    <div class="big-label">total publications</div>
+    <div class="sub-grid">
+      <div><div class="sub-num">18</div><div class="sub-label">Mathematics</div></div>
+      <div><div class="sub-num">15</div><div class="sub-label">AI / NLP / ML</div></div>
+    </div>
+    <div class="venue-label">Top Venues</div>
+    <div class="venue-item">AAAI</div>
+    <div class="venue-item">EACL </div>
+    <div class="venue-item">ICML</div>
+    <div class="venue-item">ACL </div>
+    <div class="venue-item">IJCAI</div>
+    <div class="venue-item">J. Convex Analysis</div>
+    <div class="venue-item">Bull. Austral. Math.</div>
+    <div class="legend-label">Legend</div>
+    <div class="legend-row"><div class="dot dot-gold"></div>Mathematics</div>
+    <div class="legend-row"><div class="dot dot-teal"></div>AI / NLP / ML</div>
+  </div>
+  <div class="main">
+    <div class="section">
+      <div class="section-head"><div class="section-num">05</div><div class="section-title">Publications</div><div class="section-rule"></div></div>
+
+      <!-- ── 2026 ── -->
+      <div class="year-tag">2026</div>
+      <div class="pub"><div class="pub-num">1</div><div class="pub-body"><span class="dot dot-teal" style="display:inline-block;margin-right:5px;vertical-align:middle"></span><strong>Tan N.Ö., Li M., Gahegan M.</strong> SciTrue: Evidence-Grounded Claim Verification in Science. <span class="pub-venue">EACL 2026</span><span class="pub-badge">Best System Demonstartion Paper  Award</span>&nbsp;&nbsp;<a class="pub-link" href="https://aclanthology.org/2026.eacl-demo.27/" target="_blank">link ↗</a></div></div>
+      <div class="pub"><div class="pub-num">2</div><div class="pub-body"><span class="dot dot-teal" style="display:inline-block;margin-right:5px;vertical-align:middle"></span><strong>Tan N.Ö., Tandon N., Tafjord O., Witbrock M., Clark P., Gahegan M.</strong> Echoes of Citations: Automated Extraction of Claims from Full Scientific Papers. <span class="pub-venue">AAAI 2026</span> &nbsp;&nbsp;<a class="pub-link" href="https://ojs.aaai.org/index.php/AAAI-SS/article/view/42589" target="_blank">link ↗</a></div></div>
+      <div class="pub"><div class="pub-num">3</div><div class="pub-body"><span class="dot dot-teal" style="display:inline-block;margin-right:5px;vertical-align:middle"></span><strong>Li M., Tan N.Ö.</strong> SemanticShift: Robust Semantic Watermarking for Large Language Models. <span class="pub-venue">AAAI 2026</span>&nbsp;&nbsp;<a class="pub-link" href="https://ojs.aaai.org/index.php/AAAI-SS/article/view/42577" target="_blank">link ↗</a></div></div>
+
+      <!-- ── 2024 ── -->
+      <div class="year-tag">2024</div>
+      <div class="pub"><div class="pub-num">4</div><div class="pub-body"><span class="dot dot-teal" style="display:inline-block;margin-right:5px;vertical-align:middle"></span><strong>Tan N.Ö., Tandon N., Wadden D., Tafjord O., Gahegan M., Witbrock M.</strong> Faithful Reasoning over Scientific Claims. <span class="pub-venue">AAAI 2024 </span>&nbsp;&nbsp<a class="pub-link" href="https://ojs.aaai.org/index.php/AAAI-SS/article/view/31209" target="_blank">link ↗</a></div></div>
+      <div class="pub"><div class="pub-num">5</div><div class="pub-body"><span class="dot dot-teal" style="display:inline-block;margin-right:5px;vertical-align:middle"></span><strong>Bao Q., Peng A., Tan N.Ö. et al.</strong> Abstract Meaning Representation-Based Logic-Driven Data Augmentation for Logical Reasoning. <span class="pub-venue">ACL 2024</span>&nbsp;&nbsp<a class="pub-link" href="https://arxiv.org/abs/2305.12599" target="_blank">link ↗</a></div></div>
+      <div class="pub"><div class="pub-num">6</div><div class="pub-body"><span class="dot dot-teal" style="display:inline-block;margin-right:5px;vertical-align:middle"></span><strong>Chen Y., Lin X., Tan N.Ö., Witbrock M. et al.</strong> Meta-Inverse Reinforcement Learning for Mean Field Games via Probabilistic Context Variables. <span class="pub-venue">AAAI 2024</span>&nbsp;&nbsp<a class="pub-link" href="https://ojs.aaai.org/index.php/AAAI/article/view/29021" target="_blank">link ↗</a></div></div>
+
+      <!-- ── 2023 ── -->
+      <div class="year-tag">2023</div>
+      <div class="pub"><div class="pub-num">7</div><div class="pub-body"><span class="dot dot-teal" style="display:inline-block;margin-right:5px;vertical-align:middle"></span><strong>Tan N.Ö., Nguyen T., Bensemann J., Peng A.Y., Bao Q., Gahegan M., Witbrock M.</strong> Multi2 Claim: Generating Scientific Claims from Multi-Choice Questions for Scientific Fact-Checking. <span class="pub-venue">EACL 2023</span>&nbsp;&nbsp<a class="pub-link" href="https://aclanthology.org/2023.eacl-main.194/" target="_blank">link ↗</a></div></div>
+      <div class="pub"><div class="pub-num">8</div><div class="pub-body"><span class="dot dot-teal" style="display:inline-block;margin-right:5px;vertical-align:middle"></span><strong>Tan N.Ö., Peng A.Y., Bensemann J., Bao Q., Hartill T., Gahegan M., Witbrock M.</strong> Input-length-shortening and text generation via attention values. <span class="pub-venue">AAAI 2023 EMC2 Workshop</span>&nbsp;&nbsp<a class="pub-link" href="https://arxiv.org/abs/2303.07585" target="_blank">link ↗</a></div></div>
+      <div class="pub"><div class="pub-num">9</div><div class="pub-body"><span class="dot dot-teal" style="display:inline-block;margin-right:5px;vertical-align:middle"></span><strong>Hartill T., Tan N.Ö., Witbrock M., Riddle P.J.</strong> Teaching Smaller Language Models To Generalise To Unseen Compositional Questions. <span class="pub-venue">Transactions on Machine Learning Research, 2023</span>&nbsp;&nbsp<a class="pub-link" href="https://openreview.net/pdf?id=d4Vr6E0jjm" target="_blank">link ↗</a></div></div>
+      <div class="pub"><div class="pub-num">10</div><div class="pub-body"><span class="dot dot-teal" style="display:inline-block;margin-right:5px;vertical-align:middle"></span><strong>Bao Q., Gendron G., Peng A., Tan N.Ö. et al.</strong> A Systematic Evaluation of Large Language Models on Out-of-Distribution Logical Reasoning Tasks. <span class="pub-venue">IJCAI 2023</span>&nbsp;&nbsp<a class="pub-link" href="https://arxiv.org/abs/2310.09430" target="_blank">link ↗</a></div></div>
+      <div class="pub"><div class="pub-num">11</div><div class="pub-body"><span class="dot dot-teal" style="display:inline-block;margin-right:5px;vertical-align:middle"></span><strong>Bao Q., Peng A., Tan N.Ö. et al.</strong> Enhancing Logical Reasoning of Large Language Models through Logic-Driven Data Augmentation. <span class="pub-venue">LLM@IJCAI 2023</span>&nbsp;&nbsp<a class="pub-link" href="https://ar5iv.labs.arxiv.org/html/2305.12599" target="_blank">link ↗</a></div></div>
+      <div class="pub"><div class="pub-num">12</div><div class="pub-body"><span class="dot dot-teal" style="display:inline-block;margin-right:5px;vertical-align:middle"></span><strong>OECD</strong> AI and the Future of Skills, Volume 2: Methods for Evaluating AI Capabilities [Book Chapter]. <span class="pub-venue">OECD Publishing, Paris 2023</span>&nbsp;&nbsp<a class="pub-link" href="https://www.oecd-ilibrary.org/education/ai-and-the-future-of-skills-volume-2_a9fe53cb-en" target="_blank">link ↗</a></div></div>
+
+      <!-- ── 2022 ── -->
+      <div class="year-tag">2022</div>
+      <div class="pub"><div class="pub-num">13</div><div class="pub-body"><span class="dot dot-teal" style="display:inline-block;margin-right:5px;vertical-align:middle"></span><strong>Elmes K., Benavides-Prado D., Tan N.Ö., Nguyen T.B. et al.</strong> SNVformer: An Attention-based Deep Neural Network for GWAS Data. <span class="pub-venue">ICML 2022</span>&nbsp;&nbsp<a class="pub-link" href="https://icml-compbio.github.io/icml-website-2022/2022/papers/WCBICML2022_paper_58.pdf" target="_blank">link ↗</a></div></div>
+      <div class="pub"><div class="pub-num">14</div><div class="pub-body"><span class="dot dot-teal" style="display:inline-block;margin-right:5px;vertical-align:middle"></span><strong>Bao Q., Peng A., Hartill T., Tan N.Ö. et al.</strong> Multi-Step Deductive Reasoning Over Natural Language: An Empirical Study on Out-of-Distribution Generalisation. <span class="pub-venue">IJCLR-NeSy 2022</span></div></div>
+      <div class="pub"><div class="pub-num">15</div><div class="pub-body"><span class="dot dot-teal" style="display:inline-block;margin-right:5px;vertical-align:middle"></span><strong>Bensemann J., Peng A., Tan N.Ö. et al.</strong> Eye Gaze and Self-attention: How Humans and Transformers Attend Words in Sentences. <span class="pub-venue">ACL 2022 CMCL Workshop</span>&nbsp;&nbsp<a class="pub-link" href="https://aclanthology.org/2022.cmcl-1.9/" target="_blank">link ↗</a></div></div>
+
+      <!-- ── 2021 ── -->
+      <div class="year-tag">2021</div>
+      <div class="pub"><div class="pub-num">16</div><div class="pub-body"><span class="dot dot-teal" style="display:inline-block;margin-right:5px;vertical-align:middle"></span><strong>Tan N.Ö., Bensemann J., Benavides-Prado D., Chen Y., Gahegan M., Lee L., Peng A.Y., Riddle P., Witbrock M.</strong> An explainability analysis of a sentiment prediction task using a transformer-based attention filter. <span class="pub-venue">ACS 2021</span>&nbsp;&nbsp<a class="pub-link" href="https://advancesincognitivesystems.github.io/acs2021/data/ACS-21_paper_22.pdf" target="_blank">link ↗</a></div></div>
+      <div class="pub"><div class="pub-num">17</div><div class="pub-body"><span class="dot dot-gold" style="display:inline-block;margin-right:5px;vertical-align:middle"></span><strong>Tan N.Ö.</strong> A Lexicographical Order Induced by Schauder Bases. <span class="pub-venue">Hacettepe Journal of Mathematics and Statistics, 50(2), 511–514, 2021</span>&nbsp;&nbsp<a class="pub-link" href="https://dergipark.org.tr/en/download/article-file/886818" target="_blank">link ↗</a></div></div>
+      <div class="pub"><div class="pub-num">18</div><div class="pub-body"><span class="dot dot-gold" style="display:inline-block;margin-right:5px;vertical-align:middle"></span><strong>Tan N.Ö.</strong> A Lexicographical Order in Infinite Dimensional Banach Spaces. <span class="pub-venue">Bernoulli-IMS One World Symposium, 2020 (online)</span>&nbsp;&nbsp [Conference Abstract]</div></div>
+
+      <!-- ── 2019 ── -->
+      <div class="year-tag">2019</div>
+      <div class="pub"><div class="pub-num">19</div><div class="pub-body"><span class="dot dot-gold" style="display:inline-block;margin-right:5px;vertical-align:middle"></span><strong>Moors W., Tan N.Ö.</strong> Dual Differentiation Spaces. <span class="pub-venue">Bulletin of the Australian Mathematical Society, 99(3), 467–472, 2019</span>&nbsp;&nbsp<a class="pub-link" href="https://www.cambridge.org/core/journals/bulletin-of-the-australian-mathematical-society/article/dual-differentiation-spaces/DA61C66769FFDDF6713A47B49109CF85" target="_blank">link ↗</a></div></div>
+      <div class="pub"><div class="pub-num">20</div><div class="pub-body"><span class="dot dot-gold" style="display:inline-block;margin-right:5px;vertical-align:middle"></span><strong>Moors W., Tan N.Ö.</strong> An Abstract Variational Theorem. <span class="pub-venue">Journal of Convex Analysis, 26(4), 1125–1144, 2019</span>&nbsp;&nbsp<a class="pub-link" href="https://www.heldermann.de/JCA/JCA26/JCA264/jca26062.htm" target="_blank">link ↗</a></div></div>
+      <div class="pub"><div class="pub-num">21</div><div class="pub-body"><span class="dot dot-gold" style="display:inline-block;margin-right:5px;vertical-align:middle"></span><strong>Tan N.Ö.</strong> A Remark on Totally Ordered Cones. <span class="pub-venue">5th European Conference on Computational Optimization, Trier, Germany, 2018</span>&nbsp;&nbsp [Conference Abstract]</div></div>
+
+      <!-- ── 2017 ── -->
+      <div class="year-tag">2017</div>
+      <div class="pub"><div class="pub-num">22</div><div class="pub-body"><span class="dot dot-gold" style="display:inline-block;margin-right:5px;vertical-align:middle"></span><strong>Seyyidoglu M.S., Tan N.Ö.</strong> On the Concept of Limit Inferior and Limit Superior. <span class="pub-venue">Celal Bayar University Journal of Science, (1), 181–184, 2017</span>&nbsp;&nbsp<a class="pub-link" href="https://dergipark.org.tr/en/download/article-file/289465" target="_blank">link ↗</a></div></div>
+
+      <!-- ── 2016 ── -->
+      <div class="year-tag">2016</div>
+      <div class="pub"><div class="pub-num">23</div><div class="pub-body"><span class="dot dot-gold" style="display:inline-block;margin-right:5px;vertical-align:middle"></span><strong>Tan N.Ö.</strong> A note on Riesz space valued measures. <span class="pub-venue">Turkish Journal of Mathematics, 40, 114–121, 2016</span>&nbsp;&nbsp<a class="pub-link" href="https://journals.tubitak.gov.tr/cgi/viewcontent.cgi?article=2092&context=math" target="_blank">link ↗</a></div></div>
+      <div class="pub"><div class="pub-num">24</div><div class="pub-body"><span class="dot dot-gold" style="display:inline-block;margin-right:5px;vertical-align:middle"></span><strong>Erdogan U., Akarbulut K., Tan N.Ö.</strong> Exponentially Fitted Finite Difference Schemes for Reaction Diffusion Equations. <span class="pub-venue">Mathematical and Computational Applications, 21(3), 32, 2016</span>&nbsp;&nbsp<a class="pub-link" href="https://www.mdpi.com/2297-8747/21/3/32" target="_blank">link ↗</a></div></div>
+      <div class="pub"><div class="pub-num">25</div><div class="pub-body"><span class="dot dot-gold" style="display:inline-block;margin-right:5px;vertical-align:middle"></span><strong>Tan N.Ö.</strong> An approach of some convergence type by filter. <span class="pub-venue">International Mathematical Forum, 11, 1207–1211, 2016</span>&nbsp;&nbsp<a class="pub-link" href="https://www.m-hikari.com/imf/imf-2016/21-24-2016/p/tanIMF21-24-2016.pdf" target="_blank">link ↗</a></div></div>
+      <div class="pub"><div class="pub-num">26</div><div class="pub-body"><span class="dot dot-gold" style="display:inline-block;margin-right:5px;vertical-align:middle"></span><strong>Tan N.Ö.</strong> A Note on Riesz space Valued Measures. <span class="pub-venue">TMD XXVIII National Mathematics Conference, Antalya, Turkey, 2015</span>&nbsp;&nbsp [Conference Abstract]</div></div>
+
+      <!-- ── 2015 ── -->
+      <div class="year-tag">2015</div>
+      <div class="pub"><div class="pub-num">27</div><div class="pub-body"><span class="dot dot-gold" style="display:inline-block;margin-right:5px;vertical-align:middle"></span><strong>Seyyidoglu M.S., Tan N.Ö.</strong> On a generalisation of statistical cluster and limit points. <span class="pub-venue">Advances in Difference Equations, 2015(1)</span>&nbsp;&nbsp<a class="pub-link" href="https://advancesincontinuousanddiscretemodels.springeropen.com/articles/10.1186/s13662-015-0395-9" target="_blank">link ↗</a></div></div>
+
+      <!-- ── 2014 ── -->
+      <div class="year-tag">2014</div>
+      <div class="pub"><div class="pub-num">28</div><div class="pub-body"><span class="dot dot-gold" style="display:inline-block;margin-right:5px;vertical-align:middle"></span><strong>Ercan Z., Tan N.Ö.</strong> On Kakutani Krein and Maeda Ogasawara spaces. <span class="pub-venue">Turkish Journal of Mathematics, 38, 136–138, 2014</span>&nbsp;&nbsp<a class="pub-link" href="https://journals.tubitak.gov.tr/cgi/viewcontent.cgi?article=2270&context=math" target="_blank">link ↗</a></div></div>
+
+      <!-- ── 2013 ── -->
+      <div class="year-tag">2013</div>
+      <div class="pub"><div class="pub-num">29</div><div class="pub-body"><span class="dot dot-gold" style="display:inline-block;margin-right:5px;vertical-align:middle"></span><strong>Tan N.Ö.</strong> Riesz Space Valued Measure and Integral. <span class="pub-venue">Positivity VII, Leiden University, Netherlands, 2013</span>&nbsp;&nbsp [Conference Abstract]</div></div>
+
+      <!-- ── 2012 ── -->
+      <div class="year-tag">2012</div>
+      <div class="pub"><div class="pub-num">30</div><div class="pub-body"><span class="dot dot-gold" style="display:inline-block;margin-right:5px;vertical-align:middle"></span><strong>Tan N.Ö.</strong> A Characterization of Riesz Space Valued Order Bounded Additive Measures. <span class="pub-venue">24th International Conference of Operator Theory, West University of Timisoara, 2012</span>&nbsp;&nbsp [Conference Abstract]</div></div>
+      <div class="pub"><div class="pub-num">31</div><div class="pub-body"><span class="dot dot-gold" style="display:inline-block;margin-right:5px;vertical-align:middle"></span><strong>Tan N.Ö.</strong> A Note on Ordered Bounded Measures. <span class="pub-venue">International Conference on Applied Analysis and Algebra, Yildiz Technical University, Istanbul, 2012</span>&nbsp;&nbsp [Conference Abstract]</div></div>
+
+      <!-- ── 2010 ── -->
+      <div class="year-tag">2010</div>
+      <div class="pub"><div class="pub-num">32</div><div class="pub-body"><span class="dot dot-gold" style="display:inline-block;margin-right:5px;vertical-align:middle"></span><strong>Tan N.Ö.</strong> Disaster in Topology without Choice, Countable Sums. <span class="pub-venue">International Conference on Topology and its Applications, Nafpaktos, Greece, 2010</span>&nbsp;&nbsp [Conference Abstract]</div></div>
+
+      <!-- ── 2009 ── -->
+      <div class="year-tag">2009</div>
+      <div class="pub"><div class="pub-num">33</div><div class="pub-body"><span class="dot dot-gold" style="display:inline-block;margin-right:5px;vertical-align:middle"></span><strong>Tan N.Ö.</strong> On the Second and First Countable Spaces and Axiom of Choice. <span class="pub-venue">TMD XXII National Mathematics Conference, Sirince, Turkey, 2009</span>&nbsp;&nbsp [Conference Abstract]</div></div>
+    </div>
+  </div>
+</div>
+
+  <div class="footer">Neşet Özkan Tan &nbsp;·&nbsp; Curriculum Vitae &nbsp;·&nbsp; Auckland, New Zealand</div>
+</div>
+
+<script>
+function showPage(id, btn){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
